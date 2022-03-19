@@ -9,6 +9,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { environment } from 'src/environments/environment';
+import { NavBarModule } from 'src/app/shared/modules/navBar/navBar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { environment } from 'src/environments/environment';
       autoPause: true,
     }),
     EffectsModule.forRoot([]),
+    NavBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

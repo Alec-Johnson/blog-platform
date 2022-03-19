@@ -16,7 +16,7 @@ const initialState: AuthStateInterface = {
   isSubmitting: false,
   currentUser: null,
   validationErrors: null,
-  isLoggedIn: null,
+  isLoggedIn: false,
 };
 
 const authReducer = createReducer(
