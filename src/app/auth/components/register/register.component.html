@@ -9,6 +9,11 @@
           </a>
         </p>
         <!-- Error handling from the backend -->
+        <blog-backend-error-messages 
+          *ngIf="backendErrors$ | async"
+          [backendErrors]="backendErrors$ | async"
+        ></blog-backend-error-messages>
+
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <fieldset>
             <fieldset class="form-group">

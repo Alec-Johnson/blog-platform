@@ -30,7 +30,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       isLoggedIn: true,
-      currentUser: action.response,
+      currentUser: action.currentUser,
     })
   ),
   on(

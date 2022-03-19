@@ -20,7 +20,7 @@ export class RegisterEffect {
       switchMap(({ request }) => {
         return this.authService.register(request).pipe(
           map((currentUser: CurrentUserInterface) => {
-            return registerSuccessAction({ response: currentUser });
+            return registerSuccessAction({ currentUser });
           }),
 
           catchError((errorResponse: HttpErrorResponse) => {
