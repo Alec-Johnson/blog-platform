@@ -27,3 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Application structure
+
+## Ngrx
+### Example flow for creating isSubmitting observable
+Create authFeatureSelector with AuthState interface -> create isSubmitting selector with the previous authFeatureSelector, and a function that takes in authState to return isSubmitting  -> create observable inside component -> subscribe to changes inside store with our selector inside of a RxJs pipe function
