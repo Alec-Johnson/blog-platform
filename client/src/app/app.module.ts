@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { NavBarModule } from 'src/app/shared/modules/navBar/navBar.module';
 import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { AuthInterceptor } from 'src/app/shared/services/authInterceptor.service';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { AuthInterceptor } from 'src/app/shared/services/authInterceptor.service
     }),
     EffectsModule.forRoot([]),
     NavBarModule,
+    GlobalFeedModule,
   ],
   providers: [
     PersistanceService,
