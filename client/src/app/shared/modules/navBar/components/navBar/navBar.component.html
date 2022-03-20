@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      blogger
+    </a>
+    <button type="button" class="navbar-toggler" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-responsive-collapse" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a [routerLink]="['/']" class="nav-link">Home</a>
+        </li>
+        <ng-container *ngIf="isLoggedIn$ | async">
+          <li class="nav-item">
+            <a [routerLink]="['/articles/new']" class="nav-link">
+              <i class='ion-compose'></i>
+              New Article
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/settings']" class="nav-link">
+              <i class='ion-gear-a'></i>
+              Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/profiles', ((currentUser$ | async)!).username]" class="nav-link">
+              <img class="user-pic" [src]="((currentUser$ | async)!).image" />
+              &nbsp; {{ ((currentUser$ | async)!).username }}
+            </a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isAnonymous$ | async">
+          <li class="nav-item">
+            <a [routerLink]="['/login']" class="nav-link">
+              Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/register']" class="nav-link">
+              Register
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+
+    </div>
+  </div>
+</nav>

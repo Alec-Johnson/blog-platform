@@ -34,11 +34,10 @@ export class LoginComponent implements OnInit {
 
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
-    this.backendErrors$ = this.store?.pipe(select(validationErrorsSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
   }
 
   initializeForm(): void {
-    console.log('initializeForm');
     this.form = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],

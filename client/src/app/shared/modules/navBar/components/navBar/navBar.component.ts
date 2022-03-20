@@ -12,12 +12,18 @@ import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface
 
 @Component({
   selector: 'blog-navbar',
-  templateUrl: './NavBar.component.html',
+  templateUrl: './navBar.component.html',
+  styleUrls: ['./navBar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
   isLoggedIn$!: Observable<boolean | null>;
   isAnonymous$!: Observable<boolean>;
   currentUser$!: Observable<CurrentUserInterface | null>;
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
 
   constructor(private store: Store<AppStateInterface>) {}
 
