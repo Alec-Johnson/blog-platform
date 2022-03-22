@@ -28,5 +28,10 @@
       HERE LIST OF TAGS
     </a>
   </div>
-  PAGINATION
+  <blog-pagination
+    [total]="(feed$ | async)!.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></blog-pagination>
 </div>
