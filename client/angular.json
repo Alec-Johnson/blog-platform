@@ -30,10 +30,6 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles/styles.scss",
-              "src/styles/theme.css"
-            ],
             "scripts": []
           },
           "configurations": {
@@ -98,10 +94,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ],
-            "styles": [
-              "src/styles/styles.scss",
-              "src/styles/theme.css"
             ],
             "scripts": []
           }
