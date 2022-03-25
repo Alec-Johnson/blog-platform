@@ -5,6 +5,7 @@ import {
   getFeedFailureAction,
   getFeedSuccessAction,
 } from 'src/app/shared/modules/feed/store/actions/getFeed.action';
+import { routerNavigationAction } from '@ngrx/router-store';
 
 const initialState: FeedStateInterface = {
   data: null,
@@ -35,7 +36,9 @@ const feedReducer = createReducer(
       ...state,
       isLoading: false,
     })
-  )
+  ),
+  // Empty state when navigating to a new route, prevents stale data from being displayed
+  on(routerNavigationAction, (): FeedStateInterface => initialState)
 );
 
 export function reducers(state: FeedStateInterface, action: Action) {
