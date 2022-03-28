@@ -1,0 +1,14 @@
+<blog-loading *ngIf="isLoading$ | async"></blog-loading>
+
+<blog-error-message *ngIf="error$ | async" [message]="error$ | async">
+
+</blog-error-message>
+
+<div class="sidebar" *ngIf="popularTags$ | async">
+  <p>Popular Tags</p>
+  <div class="tag-list">
+    <a *ngFor="let popularTag of popularTags$ | async"  [routerLink]="['/articles']" [queryParams]="{tag:popularTag, offset:0, limit}" class="tag-default tag-pill">
+      {{ popularTag }}
+    </a>
+  </div>
+</div>
