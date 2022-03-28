@@ -14,6 +14,8 @@ import { NavBarModule } from 'src/app/shared/modules/navBar/navBar.module';
 import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { AuthInterceptor } from 'src/app/shared/services/authInterceptor.service';
 import { GlobalFeedModule } from 'src/app/globalFeed/globalFeed.module';
+import { YourFeedModule } from 'src/app/yourFeed/yourFeed.module';
+import { TagFeedModule } from 'src/app/tagFeed/tagFeed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,8 @@ import { GlobalFeedModule } from 'src/app/globalFeed/globalFeed.module';
     EffectsModule.forRoot([]),
     NavBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
   ],
   providers: [
     PersistanceService,

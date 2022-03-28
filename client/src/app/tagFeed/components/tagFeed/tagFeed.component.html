@@ -1,0 +1,14 @@
+<div class="home-page">
+  <blog-banner></blog-banner>
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-9">
+        <blog-feed-toggler [tagName]="tagName"></blog-feed-toggler>
+        <blog-feed [apiUrl]="apiUrl"></blog-feed>
+      </div>
+      <div class="col-md-3">
+        <blog-popular-tags></blog-popular-tags>
+      </div>
+    </div>
+  </div>
+</div>
