@@ -11,6 +11,7 @@ export const getArticleSuccessAction = createAction(
   ActionTypes.GET_ARTICLE_SUCCESS,
   props<{ article: ArticleInterface }>()
 );
+
 export const getArticleFailureAction = createAction(
   ActionTypes.GET_ARTICLE_FAILURE
 );
