@@ -9,22 +9,28 @@ import { LoadingModule } from '../shared/modules/loading/loading.module';
 import { PaginationModule } from '../shared/modules/pagination/pagination.module';
 import { TagListModule } from '../shared/modules/tagList/tagList.module';
 import { ArticleService } from '../shared/services/article.service';
+import { ArticleComponent } from './components/article/article.component';
 import { GetArticleEffect } from './store/effects/getArticle.effect';
 import { reducers } from './store/reducers';
+
+const routes = [
+  {
+    path: 'articles/:slug',
+    component: ArticleComponent,
+  },
+];
 
 @NgModule({
   imports: [
     CommonModule,
     EffectsModule.forFeature([GetArticleEffect]),
     StoreModule.forFeature('article', reducers),
-    RouterModule,
+    RouterModule.forChild(routes),
     ErrorMessageModule,
     LoadingModule,
-    PaginationModule,
     TagListModule,
   ],
   declarations: [ArticleComponent],
-  exports: [ArticleComponent],
   providers: [ArticleService],
 })
 export class ArticleModule {}
