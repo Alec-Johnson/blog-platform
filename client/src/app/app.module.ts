@@ -18,6 +18,7 @@ import { YourFeedModule } from 'src/app/yourFeed/yourFeed.module';
 import { TagFeedModule } from 'src/app/tagFeed/tagFeed.module';
 import { ArticleModule } from './article/article.module';
 import { CreateArticleModule } from './createArticle/createArticle.module';
+import { EditArticleModule } from './editArticle/editArticle.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,6 +41,7 @@ import { CreateArticleModule } from './createArticle/createArticle.module';
     TagFeedModule,
     CreateArticleModule, // route: articles/new, Import this mdoule before ArticleModule, since "/new" is technically a slug and needs to be registered first
     ArticleModule, // route: articles/:slug
+    EditArticleModule,
   ],
   providers: [
     PersistanceService,

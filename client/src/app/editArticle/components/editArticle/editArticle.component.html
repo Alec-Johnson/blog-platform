@@ -1,0 +1,9 @@
+
+<blog-article-form
+  *ngIf="initialValues$ | async"
+  [initialValues]="(initialValues$ | async)!" 
+  [isSubmitting]="(isSubmitting$ | async) || false"
+  [errors]="backendErrors$ | async" 
+  (articleSubmit)="onSubmit($event)"
+>
+</blog-article-form>
